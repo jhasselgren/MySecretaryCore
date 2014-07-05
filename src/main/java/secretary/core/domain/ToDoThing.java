@@ -11,6 +11,7 @@ public class ToDoThing extends Thing {
 	
 	public ToDoThing(){
 		this.setType(ThingType.TODO);
+		this.setCreated(new Date());
 	}
 
 	public Boolean getCompleted() {

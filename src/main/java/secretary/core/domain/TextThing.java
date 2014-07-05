@@ -1,6 +1,7 @@
 package secretary.core.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TextThing extends Thing {
@@ -11,6 +12,7 @@ public class TextThing extends Thing {
 	public TextThing() {
 		this.things = new ArrayList<Thing>();
 		this.setType(ThingType.TEXT);
+		this.setCreated(new Date());
 	}
 	
 	public String getText() {
