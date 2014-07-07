@@ -1,6 +1,5 @@
 package secretary.core.domain;
 
-import java.util.Date;
 
 public class FileThing extends Thing {
 	
@@ -8,7 +7,7 @@ public class FileThing extends Thing {
 	private String description;
 	
 	public FileThing(){
-		setCreated(new Date());
+		super();
 		setType(ThingType.FILE);
 	}
 

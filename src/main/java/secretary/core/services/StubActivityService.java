@@ -40,7 +40,7 @@ public class StubActivityService implements ActivityService {
 			Calendar cal = new GregorianCalendar(2014,10,11);
 			todoThing1.setDeadline(cal.getTime());
 			todoThing1.setName("AP: Boka möte");
-			todoThing1.setProgress(34);
+			todoThing1.setProgress(30);
 			textThing.addThing(todoThing1);
 			
 			FileThing fileThing = new FileThing();

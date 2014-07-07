@@ -10,8 +10,8 @@ public class ToDoThing extends Thing {
 	private int progress;
 	
 	public ToDoThing(){
+		super();
 		this.setType(ThingType.TODO);
-		this.setCreated(new Date());
 	}
 
 	public Boolean getCompleted() {
