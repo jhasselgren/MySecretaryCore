@@ -3,6 +3,7 @@ package secretary.core.domain;
 import java.util.Date;
 import java.util.UUID;
 
+
 public class Thing {
 	private String name;
 	private Date created;
@@ -39,5 +40,19 @@ public class Thing {
 	}
 	public void setType(ThingType type) {
 		this.type = type;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean isEqual = false;
+		Thing toCompare;
+		
+		if(obj != null && obj instanceof Thing)
+		{
+			toCompare = (Thing) obj;
+			isEqual = toCompare.id.equals(this.id);
+		}
+		
+		return isEqual;
 	}
 }
