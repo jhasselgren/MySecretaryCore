@@ -1,6 +1,9 @@
 package secretary.core.domain;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
+
+@JsonTypeName("FILE")
 public class FileThing extends Thing {
 	
 	private String fileType;

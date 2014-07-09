@@ -16,15 +16,12 @@ import secretary.core.events.UpdatedEvent;
 
 public class StubActivityService implements ActivityService {
 
-	public CreatedEvent<Activity> CreateActivity(Activity activity) {
-		activity.setId("123-456-789");
-		return new CreatedEvent<Activity>(activity.getId(), activity);
-	}
-
-	public GetOneEvent<Activity> getActivity(String id) {
-		Activity activity = new Activity();
+	Activity activity;
+	
+	public StubActivityService(){
+		activity = new Activity();
 		
-		activity.setId(id);
+		activity.setId("hej");
 		activity.setName("Create a As-Is");
 		activity.setShortDescription("Show a overview of DDS System");
 		activity.setDescription("We should create a picture that show all compoment inside DDS Core and all contected systems. The goal is to get a good understanding of what DDS consist of");
@@ -94,8 +91,16 @@ public class StubActivityService implements ActivityService {
 			todoThing.setDescription("Skriv rent antekningarna och maila ut till alla deltagare");
 			activity.addThing(todoThing);
 		}
+	}
+	
+	public CreatedEvent<Activity> CreateActivity(Activity activity) {
+		activity.setId("123-456-789");
+		return new CreatedEvent<Activity>(activity.getId(), activity);
+	}
+
+	public GetOneEvent<Activity> getActivity(String id) {
 		
-		
+		activity.setId(id);
 		
 		return new GetOneEvent<Activity>(id, activity);
 	}
@@ -105,9 +110,9 @@ public class StubActivityService implements ActivityService {
 		return null;
 	}
 
-	public UpdatedEvent<Activity> updateActivity(Activity Activity) {
-		// TODO Auto-generated method stub
-		return null;
+	public UpdatedEvent<Activity> updateActivity(Activity activity) {
+		this.activity = activity;
+		return new UpdatedEvent<Activity>(activity.getId(), activity);
 	}
 
 	public DeletedEvent<Activity> deleteActivity(String id) {

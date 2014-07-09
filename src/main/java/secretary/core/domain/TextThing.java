@@ -3,6 +3,9 @@ package secretary.core.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
+@JsonTypeName("TEXT")
 public class TextThing extends Thing {
 	
 	private String text;

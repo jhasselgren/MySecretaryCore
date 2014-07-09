@@ -2,6 +2,9 @@ package secretary.core.domain;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
+@JsonTypeName("TODO")
 public class ToDoThing extends Thing { 
 	
 	private Boolean completed = false;

@@ -35,6 +35,23 @@
 			<artifactId>spring-data-mongodb</artifactId>
 			<version>1.5.1.RELEASE</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>RELEASE</version>
+		</dependency>	
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		
 		<!-- Test Artifacts -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -48,6 +65,7 @@
 			<version>4.0.5.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
+
 
 		
 	</dependencies>	

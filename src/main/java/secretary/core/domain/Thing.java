@@ -3,8 +3,28 @@ package secretary.core.domain;
 import java.util.Date;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-public class Thing {
+
+@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonTypeInfo(
+		use = JsonTypeInfo.Id.NAME,
+		include = JsonTypeInfo.As.PROPERTY,
+		property = "type",
+		visible = true
+		
+		)
+@JsonSubTypes(
+		{
+			@Type(value = FileThing.class),
+			@Type(value = TextThing.class),
+			@Type(value = ToDoThing.class)
+		}
+		)
+public abstract class Thing {
 	private String name;
 	private Date created;
 	private ThingType type;
