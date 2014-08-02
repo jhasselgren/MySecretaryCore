@@ -8,6 +8,7 @@ public class FileThing extends Thing {
 	
 	private String fileType;
 	private String description;
+	private String fileId;
 	
 	public FileThing(){
 		super();
@@ -29,4 +30,14 @@ public class FileThing extends Thing {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public String getFileId() {
+		return fileId;
+	}
+
+	public void setFileId(String fileId) {
+		this.fileId = fileId;
+	}
+	
+	
 }

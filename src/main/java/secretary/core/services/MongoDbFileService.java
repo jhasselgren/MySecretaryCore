@@ -3,6 +3,7 @@ package secretary.core.services;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.List;
 
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -23,9 +24,12 @@ public class MongoDbFileService implements FileService {
 	}
 
 	public void fetchFile(OutputStream outputStream, String fileName) throws IOException {
-		GridFSDBFile file = gridOperations.findOne(new Query(Criteria.where("filename").is(fileName)));
-		file.writeTo(outputStream);
+		
+		List<GridFSDBFile> result = gridOperations.find(new Query(Criteria.where("filename").is(fileName)));
+		
+		for (GridFSDBFile file : result) {
+			
+			file.writeTo(outputStream);
+		}
 	}
-	
-	
 }
