@@ -7,4 +7,5 @@ import java.io.OutputStream;
 public interface FileService {
 	public void UploadFile(InputStream inputStream, String fileName);
 	public void fetchFile(OutputStream outputStream, String fileName) throws IOException;
+	public void deleteFile(String fileName);
 }

@@ -32,4 +32,10 @@ public class MongoDbFileService implements FileService {
 			file.writeTo(outputStream);
 		}
 	}
+	
+	public void deleteFile(String fileName){
+		if(fileName != null){
+			gridOperations.delete(new Query(Criteria.where("filename").is(fileName)));
+		}
+	}
 }
